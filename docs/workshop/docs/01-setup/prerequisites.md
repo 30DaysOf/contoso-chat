@@ -1,4 +1,4 @@
-#  0️⃣ | Pre-Requisites
+# Pre-Requisites
 
 !!! example "Microsoft AI Tour Attendees:  <br/> Are you currently in the instructor-led session on tour? [Get Started Here](./../01-Tour-Guide-Setup/01-setup.md) to save time."   
 

@@ -12,22 +12,28 @@
         <meta name="author" content="Nitya Narasimhan">
       
       
+        <link rel="canonical" href="https://nitya.github.io/contoso-chat/00-concepts/05-dev-workflow/">
       
       
+        <link rel="prev" href="../04-app-lifecycle/">
       
-      <link rel="icon" href="/contoso-chat/assets/images/favicon.png">
+      
+        <link rel="next" href="../../01-setup/self-guided/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
-        <title>Contoso Chat: Workshop Guide</title>
+        <title>5. The Dev Workflow - Contoso Chat: Workshop Guide</title>
       
     
     
-      <link rel="stylesheet" href="/contoso-chat/assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="/contoso-chat/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/contoso-chat/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#5-the-dev-workflow" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -83,9 +94,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/contoso-chat/." title="Contoso Chat: Workshop Guide" class="md-header__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
+    <a href="../.." title="Contoso Chat: Workshop Guide" class="md-header__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
       
-  <img src="/contoso-chat/img/logo.svg" alt="logo">
+  <img src="../../img/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -102,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              5. The Dev Workflow
             
           </span>
         </div>
@@ -211,11 +222,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/contoso-chat/." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -241,7 +254,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/contoso-chat/01-setup/self-guided/" class="md-tabs__link">
+        <a href="../../01-setup/self-guided/" class="md-tabs__link">
           
   
     
@@ -270,7 +283,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/contoso-chat/01-setup/msaitour/" class="md-tabs__link">
+        <a href="../../01-setup/msaitour/" class="md-tabs__link">
           
   
     
@@ -299,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/contoso-chat/01-setup/msignite/" class="md-tabs__link">
+        <a href="../../01-setup/msignite/" class="md-tabs__link">
           
   
     
@@ -320,7 +333,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/contoso-chat/resources/" class="md-tabs__link">
+      <a href="../../resources/" class="md-tabs__link">
         
   
     
@@ -360,9 +373,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/contoso-chat/." title="Contoso Chat: Workshop Guide" class="md-nav__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
+    <a href="../.." title="Contoso Chat: Workshop Guide" class="md-nav__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
       
-  <img src="/contoso-chat/img/logo.svg" alt="logo">
+  <img src="../../img/logo.svg" alt="logo">
 
     </a>
     Contoso Chat: Workshop Guide
@@ -386,6 +399,8 @@
       
   
   
+    
+  
   
   
     
@@ -408,21 +423,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -433,13 +449,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Home
@@ -455,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/00-concepts/01-app-scenario/" class="md-nav__link">
+      <a href="../01-app-scenario/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -476,7 +492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/00-concepts/02-rag-pattern/" class="md-nav__link">
+      <a href="../02-rag-pattern/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -497,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/00-concepts/03-app-architecture/" class="md-nav__link">
+      <a href="../03-app-architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -518,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/00-concepts/04-app-lifecycle/" class="md-nav__link">
+      <a href="../04-app-lifecycle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -536,10 +552,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/contoso-chat/00-concepts/05-dev-workflow/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -548,6 +573,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -665,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/self-guided/" class="md-nav__link">
+      <a href="../../01-setup/self-guided/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -686,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/prerequisites/" class="md-nav__link">
+      <a href="../../01-setup/prerequisites/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/selfguided/01-dev/" class="md-nav__link">
+      <a href="../../01-setup/selfguided/01-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/selfguided/02-infra/" class="md-nav__link">
+      <a href="../../01-setup/selfguided/02-infra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -855,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/02-validate/validate/" class="md-nav__link">
+      <a href="../../02-validate/validate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -955,7 +981,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/01-ideation/" class="md-nav__link ">
+            <a href="../../03-build/01-ideation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1014,7 +1040,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/02-evaluation/" class="md-nav__link ">
+            <a href="../../03-build/02-evaluation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1073,7 +1099,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/03-operationalization/" class="md-nav__link ">
+            <a href="../../03-build/03-operationalization/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1140,7 +1166,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/04-wrapup/" class="md-nav__link ">
+            <a href="../../04-wrapup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1281,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/msaitour/" class="md-nav__link">
+      <a href="../../01-setup/msaitour/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1302,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/prerequisites/" class="md-nav__link">
+      <a href="../../01-setup/prerequisites/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1377,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/skillable/01-dev/" class="md-nav__link">
+      <a href="../../01-setup/skillable/01-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1398,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/skillable/02-infra/" class="md-nav__link">
+      <a href="../../01-setup/skillable/02-infra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1471,7 +1497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/02-validate/index.md" class="md-nav__link">
+      <a href="../../02-validate/index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1571,7 +1597,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/01-ideation/" class="md-nav__link ">
+            <a href="../../03-build/01-ideation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1630,7 +1656,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/02-evaluation/" class="md-nav__link ">
+            <a href="../../03-build/02-evaluation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1689,7 +1715,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/03-operationalization/" class="md-nav__link ">
+            <a href="../../03-build/03-operationalization/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1777,7 +1803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/04-wrapup/index.mds" class="md-nav__link">
+      <a href="../../04-wrapup/index.mds" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1911,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/msignite/" class="md-nav__link">
+      <a href="../../01-setup/msignite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1932,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/prerequisites/" class="md-nav__link">
+      <a href="../../01-setup/prerequisites/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2007,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/skillable/01-dev/" class="md-nav__link">
+      <a href="../../01-setup/skillable/01-dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2028,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/01-setup/skillable/02-infra/" class="md-nav__link">
+      <a href="../../01-setup/skillable/02-infra/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2101,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/02-validate/index.md" class="md-nav__link">
+      <a href="../../02-validate/index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2201,7 +2227,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/01-ideation/" class="md-nav__link ">
+            <a href="../../03-build/01-ideation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2260,7 +2286,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/02-evaluation/" class="md-nav__link ">
+            <a href="../../03-build/02-evaluation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2319,7 +2345,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/03-build/03-operationalization/" class="md-nav__link ">
+            <a href="../../03-build/03-operationalization/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2386,7 +2412,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/contoso-chat/04-wrapup/" class="md-nav__link ">
+            <a href="../../04-wrapup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2429,7 +2455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/contoso-chat/resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2459,6 +2485,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -2470,8 +2498,34 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="5-the-dev-workflow">5. The Dev Workflow<a class="headerlink" href="#5-the-dev-workflow" title="Permanent link">&para;</a></h1>
+<p>In this workshop, we'll follow a simplified version of the development lifecycle as shown in the figure below. For each stage of our development, we'll talk about the <strong>task</strong> we need to perform, and the <strong>tool</strong> that helps us do this.</p>
+<p><img alt="Dev Workflow" src="../../img/workshop-developer-flow.png" /></p>
+<p>Let's briefly review what these stages are:</p>
+<ol>
+<li><strong>Provision</strong> sets up the infrastructure on Azure and deploys the initial application version to the relevant hosting resource. The Azure Developer CLI helps us achieve this with one command.</li>
+<li><strong>Setup</strong> focuses on establishing our development environment and configuring it to work with our provisioned infrastructure. We use Dev Containers to define the dependencies, launch it from GitHub Codespaces, then authenticate with Azure, and refresh our env variables.</li>
+<li><strong>Ideate</strong></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2489,6 +2543,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-app-lifecycle/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. The App Lifecycle">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. The App Lifecycle
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../01-setup/self-guided/" class="md-footer__link md-footer__link--next" aria-label="Next: About This Lab">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                About This Lab
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2515,10 +2607,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": "/contoso-chat/", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy"], "search": "/contoso-chat/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/contoso-chat/assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

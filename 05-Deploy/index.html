@@ -12,26 +12,28 @@
         <meta name="author" content="Nitya Narasimhan">
       
       
-        <link rel="canonical" href="https://nitya.github.io/contoso-chat/">
+        <link rel="canonical" href="https://nitya.github.io/contoso-chat/05-Deploy/">
       
       
+        <link rel="prev" href="../04-Evaluate/05/">
       
-        <link rel="next" href="01-Introduction/">
+      
+        <link rel="next" href="01/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Contoso Chat: Workshop Guide</title>
+        <title>5. Deploy with Azure Container Apps - Contoso Chat: Workshop Guide</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#before-you-begin" class="md-skip">
+        <a href="#5-deploy-with-azure-container-apps" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +94,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Contoso Chat: Workshop Guide" class="md-header__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
+    <a href=".." title="Contoso Chat: Workshop Guide" class="md-header__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
       
-  <img src="img/logo.svg" alt="logo">
+  <img src="../img/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Before You Begin
+              5. Deploy with Azure Container Apps
             
           </span>
         </div>
@@ -220,11 +222,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -243,7 +243,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="01-Introduction/" class="md-tabs__link">
+        <a href="../01-Introduction/" class="md-tabs__link">
           
   
     
@@ -269,7 +269,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="02-Setup/0-PreRequisites/" class="md-tabs__link">
+        <a href="../02-Setup/0-PreRequisites/" class="md-tabs__link">
           
   
     
@@ -292,7 +292,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="03-Ideate/" class="md-tabs__link">
+        <a href="../03-Ideate/" class="md-tabs__link">
           
   
     
@@ -312,7 +312,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="04-Evaluate/" class="md-tabs__link">
+        <a href="../04-Evaluate/" class="md-tabs__link">
           
   
     
@@ -328,11 +328,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="05-Deploy/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -352,7 +354,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="Tear-Down/" class="md-tabs__link">
+        <a href="../Tear-Down/" class="md-tabs__link">
           
   
     
@@ -393,9 +395,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Contoso Chat: Workshop Guide" class="md-nav__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
+    <a href=".." title="Contoso Chat: Workshop Guide" class="md-nav__button md-logo" aria-label="Contoso Chat: Workshop Guide" data-md-component="logo">
       
-  <img src="img/logo.svg" alt="logo">
+  <img src="../img/logo.svg" alt="logo">
 
     </a>
     Contoso Chat: Workshop Guide
@@ -419,19 +421,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -440,7 +433,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -485,7 +477,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="01-Introduction/" class="md-nav__link ">
+            <a href="../01-Introduction/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -518,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01-Introduction/01-App-Scenario/" class="md-nav__link">
+      <a href="../01-Introduction/01-App-Scenario/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01-Introduction/02-RAG-Pattern/" class="md-nav__link">
+      <a href="../01-Introduction/02-RAG-Pattern/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -560,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01-Introduction/03-App-Architecture/" class="md-nav__link">
+      <a href="../01-Introduction/03-App-Architecture/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -581,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01-Introduction/04-App-Lifecycle/" class="md-nav__link">
+      <a href="../01-Introduction/04-App-Lifecycle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="01-Introduction/05-Dev-Workflow/" class="md-nav__link">
+      <a href="../01-Introduction/05-Dev-Workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -699,7 +691,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="02-Setup/0-PreRequisites/" class="md-nav__link ">
+            <a href="../02-Setup/0-PreRequisites/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -764,7 +756,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="02-Setup/1-Provision-And-Setup/" class="md-nav__link ">
+            <a href="../02-Setup/1-Provision-And-Setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -797,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="02-Setup/1-Provision-And-Setup/01-Self-Guided/" class="md-nav__link">
+      <a href="../02-Setup/1-Provision-And-Setup/01-Self-Guided/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -818,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="02-Setup/1-Provision-And-Setup/02-Skillable/" class="md-nav__link">
+      <a href="../02-Setup/1-Provision-And-Setup/02-Skillable/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -839,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="02-Setup/1-Provision-And-Setup/03-Validation/" class="md-nav__link">
+      <a href="../02-Setup/1-Provision-And-Setup/03-Validation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -910,7 +902,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="03-Ideate/" class="md-nav__link ">
+            <a href="../03-Ideate/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -943,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03-Ideate/01/" class="md-nav__link">
+      <a href="../03-Ideate/01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03-Ideate/02/" class="md-nav__link">
+      <a href="../03-Ideate/02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -985,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03-Ideate/03/" class="md-nav__link">
+      <a href="../03-Ideate/03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03-Ideate/04/" class="md-nav__link">
+      <a href="../03-Ideate/04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1027,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03-Ideate/05/" class="md-nav__link">
+      <a href="../03-Ideate/05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1048,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="03-Ideate/06/" class="md-nav__link">
+      <a href="../03-Ideate/06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,7 +1101,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="04-Evaluate/" class="md-nav__link ">
+            <a href="../04-Evaluate/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1142,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="04-Evaluate/01/" class="md-nav__link">
+      <a href="../04-Evaluate/01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1163,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="04-Evaluate/02/" class="md-nav__link">
+      <a href="../04-Evaluate/02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1184,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="04-Evaluate/03/" class="md-nav__link">
+      <a href="../04-Evaluate/03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1205,7 +1197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="04-Evaluate/04/" class="md-nav__link">
+      <a href="../04-Evaluate/04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1226,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="04-Evaluate/05/" class="md-nav__link">
+      <a href="../04-Evaluate/05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1251,6 +1243,8 @@
       
   
   
+    
+  
   
   
     
@@ -1277,21 +1271,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="05-Deploy/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1302,13 +1297,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_6" id="__nav_6_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             05 Deploy
@@ -1324,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/01/" class="md-nav__link">
+      <a href="01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1345,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/02/" class="md-nav__link">
+      <a href="02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1366,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/03/" class="md-nav__link">
+      <a href="03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1387,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/04/" class="md-nav__link">
+      <a href="04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1408,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/05/" class="md-nav__link">
+      <a href="05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1429,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/06/" class="md-nav__link">
+      <a href="06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1450,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="05-Deploy/07/" class="md-nav__link">
+      <a href="07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1501,7 +1496,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="Tear-Down/" class="md-nav__link ">
+            <a href="../Tear-Down/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1549,6 +1544,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#build-with-fastapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Build with FastAPI
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1565,44 +1577,19 @@
   
 
 
-<h1 id="before-you-begin">Before You Begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h1>
-<p>The workshop teaches you to <strong>build, evaluate, and deploy a retail copilot</strong> code-first on Azure AI. </p>
-<p>You can complete it as a <strong>self-guided</strong> workshop at home. Or you can register for an <strong>instructor-led</strong> workshop at specific events like the <a href="https://aka.ms/aitour">Microsoft AI Tour (2024-2025)</a> and <a href="https://ignite.microsoft.com/en-US/sessions?search=LAB401">Microsoft Ignite 2024</a>. The primary difference will be in the initial setup steps and the Azure subscription used.</p>
-<p><br/></p>
-<div class="admonition warning">
-<p class="admonition-title">CHOOSE THE TAB FOR YOUR SESSION - This sets the default context site-wide.</p>
+<h1 id="5-deploy-with-azure-container-apps">5. Deploy with Azure Container Apps<a class="headerlink" href="#5-deploy-with-azure-container-apps" title="Permanent link">&para;</a></h1>
+<div class="admonition success">
+<p class="admonition-title">Let's Review where we are right now</p>
+<p><img alt="Dev Workflow" src="../img/workshop-developer-flow.png" /></p>
+<p>In the previous step, we evaluated our application for quality using 4 key metrics and a larger test inputs dataset. After getting acceptable results, it's time to deploy the protoype to production. <strong>But how can we go from Prompty prototype to hosted API endpoint?</strong> Let's build a FastAPI app and serve it with Azure Container Apps.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="self-guided" name="__tabbed_1" type="radio" /><input id="microsoft-ai-tour" name="__tabbed_1" type="radio" /><input id="microsoft-ignite" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="self-guided">Self-Guided</label><label for="microsoft-ai-tour">Microsoft AI Tour</label><label for="microsoft-ignite">Microsoft Ignite</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to use <strong>your own GitHub account</strong> - you can <a href="https://github.com/signup">get one for free</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to use <strong>your own Azure subscription</strong> - you can <a href="https://aka.ms/free">get one for free</a> </li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to <strong>self-provision the infrastructure</strong> - we provide instructions</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to use <strong>your own laptop</strong> - keep it charged for the session duration</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> You can complete the lab at your own pace - no time constraints!</li>
+<h2 id="build-with-fastapi">Build with FastAPI<a class="headerlink" href="#build-with-fastapi" title="Permanent link">&para;</a></h2>
+<p><a href="https://fastapi.tiangolo.com/">FastAPI</a> is a modern, high-performance Python web framework for building and serving APIs. Build an application server (that listens on a specified port), configure it for the API endpoint (with different routes for various requests), and map routes to handler functions (that are invoked when requests are received at that route).</p>
+<ul>
+<li>You can run the application server <em>locally</em> with hot reload, allowing code changes to be reflected instantly for rapid iterations.</li>
+<li>You can run the application server <em>in production</em> with a container hosting service like Azure Container Apps, to support real-world use.</li>
 </ul>
-</div>
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to use <strong>your own GitHub account</strong> - you can <a href="https://github.com/signup">get one for free</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Uses the <strong>built-in Azure subscription</strong> from Skillable - you get auth credentials</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Uses the <strong>pre-provisioned infrastructure</strong> from Skillable - you save setup time</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to use <strong>your own laptop</strong> - keep it charged for the session duration</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> You have 75 minutes for the entire session - assume 60 mins for the lab alone</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Requires you to use <strong>your own GitHub account</strong> - you can <a href="https://github.com/signup">get one for free</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Uses the <strong>built-in Azure subscription</strong> from Skillable - you get auth credentials</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Uses the <strong>pre-provisioned infrastructure</strong> from Skillable - you save setup time</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Uses the <strong>in-venue workstations</strong> setup for event - just find an open seat to use</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> You have 75 minutes for the entire session - assume 60 mins for the lab alone</li>
-</ul>
-</div>
-</div>
-</div>
+<p>In this section, we'll see how a Prompty-based chat prototype can be packaged into a containerized application, and deployed to a hosted API endpoint on Azure.</p>
 
 
 
@@ -1639,15 +1626,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../04-Evaluate/05/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5. (Optional) Homework">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                5. (Optional) Homework
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="01-Introduction/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+          <a href="01/" class="md-footer__link md-footer__link--next" aria-label="Next: 1. Explore the Codebase">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Introduction
+                1. Explore the Codebase
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1683,10 +1686,10 @@
       <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>

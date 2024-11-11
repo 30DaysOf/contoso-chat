@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1201,7 +1201,7 @@
         
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1222,7 +1222,7 @@
         
   
   <span class="md-ellipsis">
-    5. (Optional) Homework
+    4.5. (Optional) Homework
   </span>
   
 
@@ -1328,6 +1328,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Explore the Codebase
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1337,6 +1348,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56import-os-from-pathlib-import-path-from-fastapi-import-fastapi-from-dotenv-import-load_dotenv-from-promptytracer-import-trace-from-promptycore-import-promptystream-asyncpromptystream-from-fastapiresponses-import-streamingresponse-from-fastapimiddlewarecors-import-corsmiddleware-from-opentelemetryinstrumentationfastapi-import-fastapiinstrumentor-from-contoso_chatchat_request-import-get_response-base-path__file__resolveparent-load_dotenv-app-fastapi-code_space-osgetenvcodespace_name-app_insights-osgetenvappinsights_connectionstring-if-code_space-origin_8000-fhttpscode_space-8000appgithubdev-origin_5173-fhttpscode_space-5173appgithubdev-ingestion_endpoint-app_insightssplit1split1-origins-origin_8000-origin_5173-osgetenvapi_service_aca_uri-osgetenvweb_service_aca_uri-ingestion_endpoint-else-origins-ostrip-for-o-in-pathpath__file__parent-originstxtread_textsplitlines-origins-appadd_middleware-corsmiddleware-allow_originsorigins-allow_credentialstrue-allow_methods-allow_headers-appget-async-def-root-return-message-hello-world-apppostapicreate_response-trace-def-create_responsequestion-str-customer_id-str-chat_history-str-dict-result-get_responsecustomer_id-question-chat_history-return-result-todo-fix-open-telemetry-so-it-doesnt-slow-app-so-much-fastapiinstrumentorinstrument_appapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56import os from pathlib import Path from fastapi import FastAPI from dotenv import load_dotenv from prompty.tracer import trace from prompty.core import PromptyStream, AsyncPromptyStream from fastapi.responses import StreamingResponse from fastapi.middleware.cors import CORSMiddleware from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor from contoso_chat.chat_request import get_response base = Path(__file__).resolve().parent load_dotenv() app = FastAPI() code_space = os.getenv(&quot;CODESPACE_NAME&quot;) app_insights = os.getenv(&quot;APPINSIGHTS_CONNECTIONSTRING&quot;) if code_space: origin_8000= f&quot;https://{code_space}-8000.app.github.dev&quot; origin_5173 = f&quot;https://{code_space}-5173.app.github.dev&quot; ingestion_endpoint = app_insights.split(&#39;;&#39;)[1].split(&#39;=&#39;)[1] origins = [origin_8000, origin_5173, os.getenv(&quot;API_SERVICE_ACA_URI&quot;), os.getenv(&quot;WEB_SERVICE_ACA_URI&quot;), ingestion_endpoint] else: origins = [ o.strip() for o in Path(Path(__file__).parent / &quot;origins.txt&quot;).read_text().splitlines() ] origins = [&#39;*&#39;] app.add_middleware( CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=[&quot;*&quot;], allow_headers=[&quot;*&quot;], ) @app.get(&quot;/&quot;) async def root(): return {&quot;message&quot;: &quot;Hello World&quot;} @app.post(&quot;/api/create_response&quot;) @trace def create_response(question: str, customer_id: str, chat_history: str) -&gt; dict: result = get_response(customer_id, question, chat_history) return result # TODO: fix open telemetry so it doesn&#39;t slow app so much FastAPIInstrumentor.instrument_app(app)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1554,6 +1593,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#python-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56import-os-from-pathlib-import-path-from-fastapi-import-fastapi-from-dotenv-import-load_dotenv-from-promptytracer-import-trace-from-promptycore-import-promptystream-asyncpromptystream-from-fastapiresponses-import-streamingresponse-from-fastapimiddlewarecors-import-corsmiddleware-from-opentelemetryinstrumentationfastapi-import-fastapiinstrumentor-from-contoso_chatchat_request-import-get_response-base-path__file__resolveparent-load_dotenv-app-fastapi-code_space-osgetenvcodespace_name-app_insights-osgetenvappinsights_connectionstring-if-code_space-origin_8000-fhttpscode_space-8000appgithubdev-origin_5173-fhttpscode_space-5173appgithubdev-ingestion_endpoint-app_insightssplit1split1-origins-origin_8000-origin_5173-osgetenvapi_service_aca_uri-osgetenvweb_service_aca_uri-ingestion_endpoint-else-origins-ostrip-for-o-in-pathpath__file__parent-originstxtread_textsplitlines-origins-appadd_middleware-corsmiddleware-allow_originsorigins-allow_credentialstrue-allow_methods-allow_headers-appget-async-def-root-return-message-hello-world-apppostapicreate_response-trace-def-create_responsequestion-str-customer_id-str-chat_history-str-dict-result-get_responsecustomer_id-question-chat_history-return-result-todo-fix-open-telemetry-so-it-doesnt-slow-app-so-much-fastapiinstrumentorinstrument_appapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56import os from pathlib import Path from fastapi import FastAPI from dotenv import load_dotenv from prompty.tracer import trace from prompty.core import PromptyStream, AsyncPromptyStream from fastapi.responses import StreamingResponse from fastapi.middleware.cors import CORSMiddleware from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor from contoso_chat.chat_request import get_response base = Path(__file__).resolve().parent load_dotenv() app = FastAPI() code_space = os.getenv(&quot;CODESPACE_NAME&quot;) app_insights = os.getenv(&quot;APPINSIGHTS_CONNECTIONSTRING&quot;) if code_space: origin_8000= f&quot;https://{code_space}-8000.app.github.dev&quot; origin_5173 = f&quot;https://{code_space}-5173.app.github.dev&quot; ingestion_endpoint = app_insights.split(&#39;;&#39;)[1].split(&#39;=&#39;)[1] origins = [origin_8000, origin_5173, os.getenv(&quot;API_SERVICE_ACA_URI&quot;), os.getenv(&quot;WEB_SERVICE_ACA_URI&quot;), ingestion_endpoint] else: origins = [ o.strip() for o in Path(Path(__file__).parent / &quot;origins.txt&quot;).read_text().splitlines() ] origins = [&#39;*&#39;] app.add_middleware( CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=[&quot;*&quot;], allow_headers=[&quot;*&quot;], ) @app.get(&quot;/&quot;) async def root(): return {&quot;message&quot;: &quot;Hello World&quot;} @app.post(&quot;/api/create_response&quot;) @trace def create_response(question: str, customer_id: str, chat_history: str) -&gt; dict: result = get_response(customer_id, question, chat_history) return result # TODO: fix open telemetry so it doesn&#39;t slow app so much FastAPIInstrumentor.instrument_app(app)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1581,7 +1637,7 @@
 <li><strong>line 51</strong> - when this receives a request, it calls our chat function (passing parameters)</li>
 <li><strong>line 53</strong> - it then returns the returned response for display (via console or UI used)</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<h2 id="python-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56import-os-from-pathlib-import-path-from-fastapi-import-fastapi-from-dotenv-import-load_dotenv-from-promptytracer-import-trace-from-promptycore-import-promptystream-asyncpromptystream-from-fastapiresponses-import-streamingresponse-from-fastapimiddlewarecors-import-corsmiddleware-from-opentelemetryinstrumentationfastapi-import-fastapiinstrumentor-from-contoso_chatchat_request-import-get_response-base-path__file__resolveparent-load_dotenv-app-fastapi-code_space-osgetenvcodespace_name-app_insights-osgetenvappinsights_connectionstring-if-code_space-origin_8000-fhttpscode_space-8000appgithubdev-origin_5173-fhttpscode_space-5173appgithubdev-ingestion_endpoint-app_insightssplit1split1-origins-origin_8000-origin_5173-osgetenvapi_service_aca_uri-osgetenvweb_service_aca_uri-ingestion_endpoint-else-origins-ostrip-for-o-in-pathpath__file__parent-originstxtread_textsplitlines-origins-appadd_middleware-corsmiddleware-allow_originsorigins-allow_credentialstrue-allow_methods-allow_headers-appget-async-def-root-return-message-hello-world-apppostapicreate_response-trace-def-create_responsequestion-str-customer_id-str-chat_history-str-dict-result-get_responsecustomer_id-question-chat_history-return-result-todo-fix-open-telemetry-so-it-doesnt-slow-app-so-much-fastapiinstrumentorinstrument_appapp"><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1692,9 +1748,9 @@
 
 <span class="c1"># TODO: fix open telemetry so it doesn&#39;t slow app so much</span>
 <span class="n">FastAPIInstrumentor</span><span class="o">.</span><span class="n">instrument_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
+</code></pre></div></td></tr></table></div><a class="headerlink" href="#python-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56import-os-from-pathlib-import-path-from-fastapi-import-fastapi-from-dotenv-import-load_dotenv-from-promptytracer-import-trace-from-promptycore-import-promptystream-asyncpromptystream-from-fastapiresponses-import-streamingresponse-from-fastapimiddlewarecors-import-corsmiddleware-from-opentelemetryinstrumentationfastapi-import-fastapiinstrumentor-from-contoso_chatchat_request-import-get_response-base-path__file__resolveparent-load_dotenv-app-fastapi-code_space-osgetenvcodespace_name-app_insights-osgetenvappinsights_connectionstring-if-code_space-origin_8000-fhttpscode_space-8000appgithubdev-origin_5173-fhttpscode_space-5173appgithubdev-ingestion_endpoint-app_insightssplit1split1-origins-origin_8000-origin_5173-osgetenvapi_service_aca_uri-osgetenvweb_service_aca_uri-ingestion_endpoint-else-origins-ostrip-for-o-in-pathpath__file__parent-originstxtread_textsplitlines-origins-appadd_middleware-corsmiddleware-allow_originsorigins-allow_credentialstrue-allow_methods-allow_headers-appget-async-def-root-return-message-hello-world-apppostapicreate_response-trace-def-create_responsequestion-str-customer_id-str-chat_history-str-dict-result-get_responsecustomer_id-question-chat_history-return-result-todo-fix-open-telemetry-so-it-doesnt-slow-app-so-much-fastapiinstrumentorinstrument_appapp" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
-<p class="admonition-title">You just reviewed the FastAPI application structure!</p>
+<p class="admonition-title">CONGRATULATIONS. You just reviewed the FastAPI application structure!</p>
 </div>
 
 
@@ -1795,7 +1851,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

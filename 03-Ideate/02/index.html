@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1280,7 +1280,7 @@
         
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1301,7 +1301,7 @@
         
   
   <span class="md-ellipsis">
-    5. (Optional) Homework
+    4.5. (Optional) Homework
   </span>
   
 
@@ -1683,26 +1683,26 @@
 <h1 id="32-update-prompt-metadata">3.2: Update Prompt Metadata<a class="headerlink" href="#32-update-prompt-metadata" title="Permanent link">&para;</a></h1>
 <details class="tip">
 <summary>OPTIONAL: <br/> If you get stuck, you can skip this step and copy over a pre-edited file. <br/> Click to expand this section to see the hidden commands to do this.</summary>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Tip: Use the files icon at far right to copy the text</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp ../docs/workshop/src/1-build/chat-0.prompty .
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp ../docs/workshop/src/1-build/chat-0.prompty .
 </code></pre></div></td></tr></table></div>
 </details>
-<p>To execute the Prompty asset, we need specify the languge model to use for generating the response. This metadata is defined in the <em>frontmatter</em> of the Prompty file. In this section, we'll update the metadata with model configuration and other information.</p>
 <hr />
+<p>To execute the Prompty asset, we need specify the languge model to use for generating the response. This metadata is defined in the <em>frontmatter</em> of the Prompty file. In this section, we'll update the metadata with model configuration and other information.</p>
 <h2 id="1-update-model-configuration">1. Update model configuration<a class="headerlink" href="#1-update-model-configuration" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Return to the Visual Studio Code terminal pane. </li>
 <li>If you are still seeing the error message from the previous step, then you are in the <em>Output</em> tab. Switch to the <em>Terminal</em> tab to get a command prompt.</li>
 <li>
 <p>Now, use this command to copy the previous prompty to a new one. 
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp basic.prompty chat-0.prompty
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp basic.prompty chat-0.prompty
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>Open <code>chat-0.prompty</code> and replace Line 11 with this one (fixing the placeholder value <code>&lt;your-deployment&gt;</code>):
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    azure_deployment: ${env:AZURE_OPENAI_CHAT_DEPLOYMENT}
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>    azure_deployment: ${env:AZURE_OPENAI_CHAT_DEPLOYMENT}
 </code></pre></div></td></tr></table></div></p>
 <div class="admonition info">
-<p class="admonition-title">Prompty will use the AZURE_OPENAI_CHAT_DEPLOYMENT from the <code>.env</code> file we created earlier to find and use the OpenAI endpoint we have already deployed. That file specifies the model to use as <code>gpt-35-turbo</code>.</p>
+<p class="admonition-title">Prompty will use the AZURE_OPENAI_CHAT_DEPLOYMENT variable from the .env file we created earlier to find the OpenAI endpoint we pre-deployed. For now, that env specifies <em>gpt-35-turbo</em> as the model.</p>
 </div>
 </li>
 </ol>
@@ -1748,12 +1748,15 @@
 <li><code>"[info] Hey Nitya! Thank you for asking about our tents. ..."</code></li>
 </ul>
 <div class="admonition info">
-<p class="admonition-title">Responses from Generative AI models use randomness when creating responses, and aren't always the same.</p>
+<p class="admonition-title">Generative AI models use randomness when creating responses, so your results aren't always the same.</p>
 </div>
 </li>
 </ol>
-<p>✅ | Your prompty model configuration is now working!</p>
-<p><strong>Ideate on your own!</strong> If you like, try changing the <code>firstName</code> and <code>question</code> fields in the Prompty file and run it again. How do your changes affect the response?</p>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">CONGRATULATIONS. You updated your Prompty model configuration!</p>
+</div>
+<p><strong>Continue ideating on your own!</strong> If you like, try changing the <code>firstName</code> and <code>question</code> fields in the Prompty file and run it again. How do your changes affect the response?</p>
 
 
 
@@ -1853,7 +1856,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

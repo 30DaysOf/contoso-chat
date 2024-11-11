@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -1204,7 +1204,7 @@
         
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1225,7 +1225,7 @@
         
   
   <span class="md-ellipsis">
-    5. (Optional) Homework
+    4.5. (Optional) Homework
   </span>
   
 
@@ -1573,12 +1573,13 @@
 <li>Our application processes these inputs, storing the results (in <code>evaluators/results.jsonl</code>)</li>
 <li>Our evaluators grade results for 4 quality metrics (in <code>evaluators/eval_results.jsonl</code>)</li>
 </ol>
+<hr />
 <div class="admonition info">
 <p class="admonition-title">Connect The Dots: How does AI-Assisted Evaluation Work? 💡 </p>
+</div>
 <p><strong>During the ideation phase, we use a single test input (sample) to evaluate our chat AI.</strong> We do this by <em>manually</em> checking the copilot response to that test input, then iterating our prompt asset till the response is satisfactory. But this approach does not scale to the diverse set of possible test inputs that may happen in the real world.</p>
 <p><strong>In the evaluation phase, we use a second AI to evaluate the first one.</strong> We do this by <em>instructing</em> a second generative AI model (the evaluator AI) to "grade" the chat AI (copilot) using a set of custom scoring criteria that we provide. The evaluator AI takes <code>{question, response}</code> pairs as inputs and grades them to return a <code>score</code> in the 1-5 range, <strong>for the specific metric</strong> being evaluated.</p>
 <p><strong>We can build prompt-based custom evaluators</strong> forquality assessments with Prompty. Let's see this in action.</p>
-</div>
 
 
 
@@ -1678,7 +1679,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

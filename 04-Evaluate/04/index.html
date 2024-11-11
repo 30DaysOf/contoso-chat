@@ -22,15 +22,15 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
-        <title>4. Understand Eval Workflow - Contoso Chat: Workshop Guide</title>
+        <title>4.4 Understand Eval Workflow - Contoso Chat: Workshop Guide</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#4-understand-eval-workflow" class="md-skip">
+        <a href="#44-understand-eval-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4. Understand Eval Workflow
+              4.4 Understand Eval Workflow
             
           </span>
         </div>
@@ -1213,7 +1213,7 @@
           
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1224,7 +1224,7 @@
         
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1301,7 +1301,7 @@
         
   
   <span class="md-ellipsis">
-    5. (Optional) Homework
+    4.5. (Optional) Homework
   </span>
   
 
@@ -1680,10 +1680,11 @@
   
 
 
-<h1 id="4-understand-eval-workflow">4. Understand Eval Workflow<a class="headerlink" href="#4-understand-eval-workflow" title="Permanent link">&para;</a></h1>
+<h1 id="44-understand-eval-workflow">4.4 Understand Eval Workflow<a class="headerlink" href="#44-understand-eval-workflow" title="Permanent link">&para;</a></h1>
 <div class="admonition note">
 <p class="admonition-title">The evaluation flow takes 7-9 minutes to complete. Let's use the time to explore the code and understand the underlying workflow in more detail</p>
 </div>
+<hr />
 <h2 id="1-explore-create-response">1. Explore: Create Response<a class="headerlink" href="#1-explore-create-response" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1702,6 +1703,7 @@
 </ul>
 </li>
 </ol>
+<hr />
 <h2 id="2-explore-evaluate-response">2. Explore: Evaluate Response<a class="headerlink" href="#2-explore-evaluate-response" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Take another look at  <code>src/api/evaluate-chat-flow.ipynb</code><ul>
@@ -1713,6 +1715,7 @@
 </ul>
 </li>
 </ol>
+<hr />
 <h2 id="3-explore-create-summary">3. Explore: Create Summary<a class="headerlink" href="#3-explore-create-summary" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1733,6 +1736,7 @@
 </li>
 </ol>
 <p><img alt="Eval" src="../../img/tabular-eval.png" /></p>
+<hr />
 <h2 id="4-understand-eval-results">4. Understand: Eval Results<a class="headerlink" href="#4-understand-eval-results" title="Permanent link">&para;</a></h2>
 <p>The figure shows you what that tabulated data looks like in the notebook results. Ignore the formatting for now, and let's look at what this tells us:</p>
 <ol>
@@ -1756,6 +1760,10 @@
 <p>As one example, we can see that the first response in the visualized results (<code>row 0</code>) had a groundedness of 5, while the third row from the bottom (<code>row 9</code>) had a groundedness of 1. You might find that in the first case the answers provided matched the data context. While in the second case, the answers may quote specific context but did not actually reflect correct usage.</p>
 <div class="admonition note">
 <p class="admonition-title">Explore the data in more detail on your own. Try to build your intuition for how scores are computed, and how that assessment reflects in the quality of your application.</p>
+</div>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">CONGRATULATIONS. You just looked under the hood of an AI-Assisted evaluation workflow.</p>
 </div>
 
 
@@ -1811,13 +1819,13 @@
         
         
           
-          <a href="../05/" class="md-footer__link md-footer__link--next" aria-label="Next: 5. (Optional) Homework">
+          <a href="../05/" class="md-footer__link md-footer__link--next" aria-label="Next: 4.5. (Optional) Homework">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                5. (Optional) Homework
+                4.5. (Optional) Homework
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1856,7 +1864,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1271,7 +1271,7 @@
         
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1292,7 +1292,7 @@
         
   
   <span class="md-ellipsis">
-    5. (Optional) Homework
+    4.5. (Optional) Homework
   </span>
   
 
@@ -1664,6 +1664,7 @@
 
 <h1 id="43-run-batch-evaluation">4.3 Run Batch Evaluation<a class="headerlink" href="#43-run-batch-evaluation" title="Permanent link">&para;</a></h1>
 <p>In the previous section, we assessed a single answer for a single metric, running one Prompty at a time. In reality, we will need to run assessments automatically across a large set of test inputs, with all custom evaluators, before we can judge if the application is ready for production use. In this exercise, we'll run a batch evaluation on our Contoso Chat application, using a Jupyter notebook.</p>
+<hr />
 <h2 id="1-run-evaluation-notebook">1. Run Evaluation Notebook<a class="headerlink" href="#1-run-evaluation-notebook" title="Permanent link">&para;</a></h2>
 <p>Navigate to the <code>src/api</code> folder in Visual Studio Code.</p>
 <ul>
@@ -1671,10 +1672,7 @@
 <li>Click: Select Kernel - choose "Python Environments" - pick recommended <code>Python 3.11.x</code></li>
 <li>Click: <code>Run all</code> - this kickstarts the multi-step evaluation flow.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Troubleshooting: Evaluation gives an error message in the Notebook</p>
-<p>On occasion, the evaluation notebook may throw an error after a few iterations. This is typically a transient error. To fix it, <code>Clear outputs</code> in the Jupyter Notebook, then <code>Restart</code> the kernel. <code>Run All</code> should complete the run this time.</p>
-</div>
+<hr />
 <h2 id="2-watch-evaluation-runs">2. Watch Evaluation Runs<a class="headerlink" href="#2-watch-evaluation-runs" title="Permanent link">&para;</a></h2>
 <p>One of the benefits of using Prompty is the built-in <code>Tracer</code> feature that captures execution traces for the entire workflow. These trace <em>runs</em> are stored in  <code>.tracy</code> files in the <code>api/.runs/</code> folder as shown in the figure below.</p>
 <ul>
@@ -1683,22 +1681,67 @@
 <li>You see: <code>groundedness</code> traces when its groundeness is evaluated</li>
 <li>You see: similar <code>fluency</code>, <code>coherence</code> and <code>relevance</code> traces</li>
 </ul>
+<p>These are live trace runs so you should be able to make the following observations when completed:</p>
+<ul>
+<li>There will be 12 <code>get_response</code> traces corresponding to 12 chat prompts that are executed by our chat AI.</li>
+<li>For each of these responses, you should see 4 traces for each of the 4 custom evaluators we have defined.</li>
+<li>Clicking on an <code>.tracy</code> file should open the <em>Trace Viewer</em> window, allowing you to dive into the data visually.</li>
+</ul>
 <p><img alt="Eval" src="../../img/Evaluation%20Runs.png" /></p>
+<hr />
 <h2 id="3-explore-evaluation-trace">3. Explore: Evaluation Trace<a class="headerlink" href="#3-explore-evaluation-trace" title="Permanent link">&para;</a></h2>
-<p>Click on any of these <code>.tracy</code> files to launch the <em>Trace Viewer</em> window seen at right. </p>
+<div class="admonition task">
+<p class="admonition-title">OPTIONAL: Explore .tracy files with Trace Viewer</p>
+<p>The Prompty runtime generates <code>.tracy</code> files (underlying JSON format) that capture the execution trace from prompt (input) to response (output). This section explains how you can use the traces to view or debug workflows.</p>
+</div>
+<p>To explore the evaluation trace:</p>
 <ul>
-<li>Note that this may take a while to appear. </li>
-<li>You may need to click several runs before seeing a full trace.</li>
+<li>Wait till the batch evaluation process completes. </li>
+<li>Click on a <code>.tracy</code> file to launch trace viewer (see figure above). </li>
 </ul>
-<p>Once the trace file is displayed, explore the panel to get an intuition for usage</p>
+<div class="admonition warning">
+<p class="admonition-title">The trace viewer feature is experimental. <em>You may need to click, wait, and retry a few times before the viewer loads the file successfully</em>. Skip this section and revisit it at home if time is limited.</p>
+</div>
+<ol>
+<li>
+<p><strong>Observe the Trace View</strong></p>
 <ul>
-<li>See: sequence of steps in orchestrated flow (left)</li>
-<li>See: prompt files with <code>load-prepare-run</code> sub-traces</li>
-<li>See: Azure OpenAIExecutor traces on model use</li>
-<li>Click: any trace to see its timing and details in pane (right)</li>
+<li>You should see a waterfall view on the left, and a detail view on the right.</li>
+<li>The waterfall view shows the sequence of steps in the orchestrated flow.</li>
+<li>"Prompty" icons show asset execution (load-prepare-run)</li>
+<li>"Open AI" icons show model invocations (chat, embeddings)</li>
+<li>Cube icons represent Python function invocations (code)</li>
+<li>Click an item on the left to see detailed trace on the right.</li>
 </ul>
+</li>
+<li>
+<p><strong>Explore the <code>get_response</code> root trace</strong></p>
+<ul>
+<li>Click the <code>get_response</code> node on left</li>
+<li>Observe the trace details on right</li>
+<li>You should see:<ul>
+<li>The Input query (question, customerId, chat_history)</li>
+<li>The Output response (question, answer)</li>
+<li>Total time taken for execution</li>
+<li>Total <strong>tokens</strong> used in execution</li>
+<li>Token split between prompt and completion</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Explore a Prompty execution trace</strong></p>
+</li>
+<li>
+<p><strong>Explore the Prompty tracer code</strong></p>
+</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">Want to learn more about Prompty Tracing? <a href="https://github.com/microsoft/prompty/tree/main/runtime/prompty#using-tracing-in-prompty">Explore the documentation</a> to learn how to configure your application for traces, and how to view and publish traces for debugging and observability.</p>
+</div>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">CONGRATULATIONS. You ran a batch evaluation on the chat AI application responses!</p>
 </div>
 
 
@@ -1754,13 +1797,13 @@
         
         
           
-          <a href="../04/" class="md-footer__link md-footer__link--next" aria-label="Next: 4. Understand Eval Workflow">
+          <a href="../04/" class="md-footer__link md-footer__link--next" aria-label="Next: 4.4 Understand Eval Workflow">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                4. Understand Eval Workflow
+                4.4 Understand Eval Workflow
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1799,7 +1842,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

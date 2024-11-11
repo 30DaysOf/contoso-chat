@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1280,7 +1280,7 @@
         
   
   <span class="md-ellipsis">
-    4. Understand Eval Workflow
+    4.4 Understand Eval Workflow
   </span>
   
 
@@ -1301,7 +1301,7 @@
         
   
   <span class="md-ellipsis">
-    5. (Optional) Homework
+    4.5. (Optional) Homework
   </span>
   
 
@@ -1690,6 +1690,7 @@
 <p>To mimic the iterative process of ideation, we start each step by copying the Prompty from the previous step (<code>chat-0.prompty</code>) to a new file (<code>chat-1.prompty</code>) to make edits.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp chat-0.prompty chat-1.prompty
 </code></pre></div></td></tr></table></div>
+<hr />
 <h2 id="2-set-the-temperature-parameter">2. Set the Temperature Parameter<a class="headerlink" href="#2-set-the-temperature-parameter" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title"><a href="https://learn.microsoft.com/azure/ai-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions#temperature-and-top_p-parameters">Temperature</a> is one of the parameters you can use to modify the behavior of Generative AI models. It controls the degree of randomness in the response, from 0.0 (deterministic) to 1.0 (maximum variability).</p>
@@ -1704,6 +1705,7 @@
 </code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
+<hr />
 <h2 id="3-provide-sample-input-file">3. Provide Sample Input File<a class="headerlink" href="#3-provide-sample-input-file" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">The <a href="https://www.prompty.ai/docs/prompty-specification">sample</a> property of a Prompty asset provides the data to be used in test execution. It can be defined inline (with an object) or as an external file (with a string providing the file pathname)</p>
@@ -1737,8 +1739,9 @@ sample: ${file:chat-1.json}
 <p>This declares the inputs to the prompty: <code>customer</code> (a JSON object) and <code>question</code> (a string). It also declares that sample data for these inputs is to be found in the file <code>chat-1.json</code>.</p>
 </li>
 </ol>
+<hr />
 <h2 id="4-update-the-system-prompt">4. Update the System Prompt<a class="headerlink" href="#4-update-the-system-prompt" title="Permanent link">&para;</a></h2>
-<p>The <strong>sytem</strong> section of a Prompty file specifies the "meta-prompt". This additional text is added to the user's actual question to provide the context necessary to answer accurately. With some Generative AI models like the GPT family, this is passed to a special "system prompt", which guides the AI model in its response to the question, but does not generate a response directly. </p>
+<p>The <strong>system</strong> section of a Prompty file specifies the "meta-prompt". This additional text is added to the user's actual question to provide the context necessary to answer accurately. With some Generative AI models like the GPT family, this is passed to a special "system prompt", which guides the AI model in its response to the question, but does not generate a response directly. </p>
 <p>You can use the <strong>sytem</strong> section to provide guidance on how the model should behave, and to provide information the model can use as context.</p>
 <p>Prompty constructs the meta-prompt from the inputs before passing it to the model. Parameters like <code>{{firstName}}</code> are replaced by the corresponding input. You can also use syntax like <code>{{customer.firstName}}</code> to extract named elements from objects.</p>
 <ol>
@@ -1809,12 +1812,15 @@ The customer&#39;s name is {{customer.firstName}} {{customer.lastName}} and is {
 </ul>
 <p>You can also change the parameters passed to the generative AI model in the <code>parameters:</code> section.</p>
 <ul>
-<li>Have you observed truncated responses in the output? Try changing <code>max_tokens</code> to 3000 - does that fix the problem?</li>
+<li>Try changing <code>max_tokens</code> to "150" and observe the response. How does this impact the length and quality of response (e.g., is is truncated?)</li>
 <li>Try changing <code>temperature</code> to 0.7. Try some other values between 0.0 and 1.0. What happens to the output?</li>
 </ul>
 </li>
 </ol>
-<p>✅ | Your prompty template is updated, and uses a sample test data file</p>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">CONGRATULATIONS. You updated the Prompty template &amp; added sample test data!</p>
+</div>
 
 
 
@@ -1914,7 +1920,7 @@ The customer&#39;s name is {{customer.firstName}} {{customer.lastName}} and is {
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   </body>

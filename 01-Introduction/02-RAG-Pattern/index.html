@@ -806,7 +806,7 @@
         
   
   <span class="md-ellipsis">
-    A. Self-Guided
+    A. Self-Guided Setup
   </span>
   
 
@@ -827,7 +827,7 @@
         
   
   <span class="md-ellipsis">
-    B. Skillable-Based
+    B. Skillable-Based Setup
   </span>
   
 
@@ -848,7 +848,7 @@
         
   
   <span class="md-ellipsis">
-    C. Validate Setup
+    Validate Your Setup
   </span>
   
 
@@ -1575,7 +1575,7 @@
 <p><img alt="RAG" src="../../img/rag-design-pattern.png" /></p>
 <p>Let's learn how this design pattern works in the context of our Contoso Chat application. Click on the tabs in order, to understand the sequence of events shown in the figure above.</p>
 <hr />
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="1-get-query" name="__tabbed_1" type="radio" /><input id="2-vectorize-query" name="__tabbed_1" type="radio" /><input id="3-retrieve-matches" name="__tabbed_1" type="radio" /><input id="4-augment-query" name="__tabbed_1" type="radio" /><input id="3-generate-response" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="1-get-query">1. Get Query</label><label for="2-vectorize-query">2. Vectorize Query</label><label for="3-retrieve-matches">3. <strong>Retrieve</strong> Matches</label><label for="4-augment-query">4. <strong>Augment</strong> Query</label><label for="3-generate-response">3. <strong>Generate</strong> Response</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="1-get-query" name="__tabbed_1" type="radio" /><input id="2-vectorize-query" name="__tabbed_1" type="radio" /><input id="3-retrieve-matches" name="__tabbed_1" type="radio" /><input id="4-augment-query" name="__tabbed_1" type="radio" /><input id="5-generate-response" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="1-get-query">1. Get Query</label><label for="2-vectorize-query">2. Vectorize Query</label><label for="3-retrieve-matches">3. <strong>Retrieve</strong> Matches</label><label for="4-augment-query">4. <strong>Augment</strong> Query</label><label for="5-generate-response">5. <strong>Generate</strong> Response</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition info">
@@ -1592,19 +1592,19 @@
 </div>
 <div class="tabbed-block">
 <div class="admonition info">
-<p class="admonition-title">The retrieval service uses the vectorized query to return matching results based on similarity</p>
+<p class="admonition-title">The retrieval service uses vectorized query to return matching results by similarity</p>
 </div>
 <p>The information retrieval service maintains a search index for relevant information (here, for our product catalog). In this step, we use the vectorized query from the previous step to find and return <em>matching product results</em> based on vector similarity. The information retrieval service can also use features like <em>semantic ranking</em> to order the returned results.</p>
 </div>
 <div class="tabbed-block">
 <div class="admonition info">
-<p class="admonition-title">The copilot <strong>augments</strong> the question with this knowledge for an enhanced <em>model prompt</em>.</p>
+<p class="admonition-title">The copilot augments user prompt with retrieved knowledge in request to model</p>
 </div>
 <p>The Contoso Chat application combines the user's original <em>question</em> with returned "documents" from the information retrieval service, to create an enhanced <em>model prompt</em>. This is made easier using prompt template technologies (e.g., Prompty) with placeholders - for chat history, retrieved documents, and customer profile information - that are filled in at this step.</p>
 </div>
 <div class="tabbed-block">
 <div class="admonition info">
-<p class="admonition-title">The chat model is invoked with this prompt, generating a grounded response as the returned result.</p>
+<p class="admonition-title">The chat model uses prompt to generate a grounded response to user question.</p>
 </div>
 <p>This enhanced prompt is now sent to the Large Language "chat" model (e.g., Azure OpenAI <code>gpt-35-turbo</code> or <code>gpt-4o</code>) which sees the enhanced prompt (retrieved documents, customer profile data, chat history) as <em>grounding</em> context for generating the final response, improving the quality (e.g., relevance, groundedness) of results returned from Contoso Chat.</p>
 </div>

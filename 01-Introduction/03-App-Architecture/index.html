@@ -806,7 +806,7 @@
         
   
   <span class="md-ellipsis">
-    A. Self-Guided
+    A. Self-Guided Setup
   </span>
   
 
@@ -827,7 +827,7 @@
         
   
   <span class="md-ellipsis">
-    B. Skillable-Based
+    B. Skillable-Based Setup
   </span>
   
 
@@ -848,7 +848,7 @@
         
   
   <span class="md-ellipsis">
-    C. Validate Setup
+    Validate Your Setup
   </span>
   
 
@@ -1578,19 +1578,25 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="1-architecture-components" name="__tabbed_1" type="radio" /><input id="2-processing-services" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="1-architecture-components">1. Architecture Components</label><label for="2-processing-services">2. Processing Services</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>The architecture contains these core components:</p>
+<p>The architecture has these core components:</p>
 <ul>
-<li><em>Azure AI Search</em> - an <strong>information retrieval</strong> service (product index, semantic ranking)</li>
-<li><em>Azure CosmosDB</em> - a <strong>database</strong> for storing customer profiles (order history)</li>
-<li><em>Azure OpenAI</em> - with <strong>model deployments</strong> (for embedding, chat, and evaluation)</li>
-<li><em>Azure Container Apps</em> - a <strong>application hosting</strong> service (deployed API endpoint)</li>
-<li><em>Azure Managed Identity</em> - for <strong>keyless authentication</strong> support (more trustworthy AI)</li>
+<li><em>Azure AI Search</em> → the <strong>information retrieval</strong> service (product index)</li>
+<li><em>Azure CosmosDB</em> → the <strong>database</strong> (customer profile, order history)</li>
+<li><em>Azure OpenAI</em> → the <strong>model deployments</strong> (embedding, chat, eval)</li>
+<li><em>Azure Container Apps</em> → the <strong>app hosting</strong> service (API endpoint)</li>
+<li><em>Azure Managed Identity</em> → for <strong>keyless authentication</strong> (trustworthy AI)</li>
 </ul>
 </div>
 <div class="tabbed-block">
-<p>The Contoso Chat AI application ("custom copilot") is integrated into a FastAPI application server that is hosted using Azure Container Apps. This exposes an API endpoint to frontend chat UI for user interactions. Incoming user requests are parsed to extract request parameters (<em>customer ID, chat history, user question</em>) and to invoke the copilot, which processes the request as follows:</p>
+<p>The Architecture "processes" incoming user requests received on the hosted API endpoint by taking the following steps:</p>
 <ol>
-<li>The <em>customer ID</em> is used to retrieve customer order history from <em>Azure Cosmos DB</em></li>
+<li>Extracts <em>{question, customer id, chat history}</em> parameters from request.</li>
+<li>The parsed parameters are used to trigger chat AI (<em>get-request</em>)</li>
+<li>The <em>customer id</em> is used to retrieve customer profile from Azure Cosmos DB</li>
+<li></li>
+<li>
+<p>The <em>customer ID</em> is used to retrieve customer order history from <em>Azure Cosmos DB</em></p>
+</li>
 <li>The <em>user question</em> is converted from text to vector using an <em>Azure OpenAI</em> embedding model.</li>
 <li>The <em>vectorized question</em> is used to retrieve matching products from <em>Azure AI Search</em></li>
 <li>The user question &amp; retrieved documents are combined into an <em>enhanced model prompt</em></li>

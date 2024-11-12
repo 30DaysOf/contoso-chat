@@ -1648,24 +1648,29 @@
 <h3 id="1-add-code-for-prompty">1. Add Code For Prompty<a class="headerlink" href="#1-add-code-for-prompty" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>First, let's copy over final versions of our Prompty file and input data:</p>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp ../docs/workshop/src/1-build/chat-3.prompty .
+<p>First, let's copy over final versions of our Prompty file:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp ../docs/workshop/src/1-build/chat-3.prompty .
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp ../docs/workshop/src/1-build/chat-3.json .
+</li>
+<li>
+<p>And copy over the final version of our input data:
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>cp ../docs/workshop/src/1-build/chat-3.json .
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>In the Explorer pane, right-click on the new <code>chat-3.prompty</code> file and select <em>"Add Code &gt; Add Prompty Code"</em>. This creates a new Python file <code>chat-3.py</code> and opens it in VS Code.</p>
 </li>
 <li>
-<p>Run the default code by clicking the play icon. <strong>It will fail with an error</strong> indicating there are missing environment variables. Let's fix that.</p>
+<p>Run the default code by clicking the play icon. <strong>It will fail with an error</strong> that may look something like this, indicating a missing environment variable. Let's fix that, next.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ValueError: Variable AZURE_OPENAI_ENDPOINT not found in environment
+</code></pre></div></td></tr></table></div>
 </li>
 </ol>
 <h3 id="2-update-default-code">2. Update Default Code<a class="headerlink" href="#2-update-default-code" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Add the three lines below to the top of <code>chat-3.py</code>:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">chat-3.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">## Load environment variables</span>
 <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>

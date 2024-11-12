@@ -1803,22 +1803,22 @@
 <summary>GET STARTED: Launch Skillable VM, Click Deploy Button, Open Workshop Guide</summary>
 <p>The lab instructor should have shared a Skillable Lab link (URL or QR Code).</p>
 <ul>
-<li>Open the browser and navigate to the link - <em>verify the lab title is right</em>.</li>
-<li>Click the <strong>Launch</strong> button - <em>wait till the page completes loading</em>.<ul>
+<li>Open the browser and navigate to the link - <em>locate LAB401 in the page</em>.</li>
+<li>Click the <strong>Launch</strong> button - <em>wait till the launched page completes loading</em>.<ul>
 <li>(Left) You will see a login screen - <em>we can ignore this for now</em></li>
 <li>(Top Right) You will see a countdown timer - it should start at 1hr 15 mins. </li>
 <li>(Below that) You will see a <strong>Deploy</strong> button - we will use this, next.</li>
-<li>(Right) You should see an instruction pane - we'll validate this, after.</li>
+<li>(Below That) You should see the instructions panel - we'll validate this, after.</li>
 </ul>
 </li>
 <li>Click the <strong>Deploy</strong> button - <em>wait till the loading progress icon stops</em>.<ul>
 <li>This triggers a background task to deploy our application to Azure</li>
-<li>This step can take a few minutes to complete</li>
+<li><strong>This step can take a few minutes to complete</strong></li>
 <li>When done, you should see a "Success" dialog below the button.</li>
-<li><strong>Note: The dialog may use a red background to alert you - this does not imply failure!</strong>.</li>
+<li><em>Note: The dialog may use a red background to alert you - this does not imply failure!</em></li>
 </ul>
 </li>
-<li>Review the instruction pane details:<ul>
+<li>Review other <strong>Instructions Panel</strong> details:<ul>
 <li>Check the lab title - should be <em>Build a Retail Copilot Code-First on Azure AI</em></li>
 <li>Check the Azure subscription - should have <em>username &amp; password</em> details filled in</li>
 <li>Check the Workshop guide link - should open to a hosted version of this guide.</li>
@@ -2010,14 +2010,14 @@
 </ol>
 <h2 id="5-do-post-provisioning">5. Do Post-Provisioning<a class="headerlink" href="#5-do-post-provisioning" title="Permanent link">&para;</a></h2>
 <p><em>We can now use these configured tools and SDK to perform some post-provisioning tasks. This includes populating data in Azure AI Search (product indexes) and Azure Cosmos DB (customer data), and deploying the initial version of our application to Azure Container Apps</em>.</p>
-<p>From the Terminal pane in Tab 2️⃣:</p>
+<p>Return to the Visual Studio Code Terminal above:</p>
 <ol>
 <li>
 <p>Run the command below. (This will take a few minutes to complete.)</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>bash ./docs/workshop/src/0-setup/azd-update-roles.sh
 </code></pre></div></td></tr></table></div>
 <div class="admonition info">
-<p class="admonition-title">This updates the security profile for the provisioned Cosmos DB database so you can add data to it. This step isn't needed when you deploy Cosmos DB yourself.</p>
+<p class="admonition-title">We pre-provisioned the Azure resources for you using a service principal. In this step, we update the resource roles to allow user access so you can populate data in Azure AI Search and Azure Cosmos DB from code. This step is not required in self-guided mode where you provision all resources yourself.</p>
 </div>
 </li>
 <li>
@@ -2025,8 +2025,9 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>azd hooks run postprovision
 </code></pre></div></td></tr></table></div>
 <div class="admonition info">
-<p class="admonition-title">This populates Azure Search and Cosmos DB with product and customer data. If you're curious, the code to do this is in Jupyter Notebooks in the relevant <code>data/</code> subfolders.</p>
+<p class="admonition-title">This step runs the Jupyter Notebooks found in the relevant <code>data/</code> subfolders, populating the Azure AI Search and Azure CosmosDB resources with product catalog (index) and customer profile (orders).</p>
 </div>
+<p>This step should take just a few minutes to complete from the commandline.</p>
 </li>
 </ol>
 <hr />

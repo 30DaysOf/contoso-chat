@@ -1758,21 +1758,21 @@
 <p><img alt="ACA Architecture" src="../../../img/aca-architecture.png" /></p>
 <ol>
 <li>
-<p>Open a new browser tab and navigate to the link below:
-    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>https://portal.azure.com
+<p>Open a new browser tab and navigate to the link below. You will be prompted to login.
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>https://portal.azure.com/#browse/resourcegroups
 </code></pre></div></td></tr></table></div></p>
 </li>
 <li>
-<p><strong>Sign in</strong> → Use the <code>Username</code> and <code>Password</code> seen under "Azure Credentials" in your Skillable Lab window (launched during Setup).</p>
+<p><strong>Sign in</strong> → Use the <code>Username</code> and <code>Password</code> from the "Azure Credentials" section in your Skillable Lab instructions panel.</p>
 </li>
-<li>You will be presented with a "Welcome to Microsoft Azure" screen. Click <strong>Cancel</strong> (to dismiss it) or click <strong>Get Started</strong> (to take an introductory tour of the Azure Portal).</li>
-<li>In the Navigate section → <strong>Click</strong> <code>Resource Groups</code>.<ul>
+<li>You may be presented with a "Welcome to Microsoft Azure" screen. Click <strong>Cancel</strong> (to dismiss it) or click <strong>Get Started</strong> (to take an introductory tour of the Azure Portal).</li>
+<li>You should be taken directly to the Resource Groups page for your subscription.<ul>
 <li>You should see an <code>rg-AITOUR</code> resource. This was created for you and contains all the resources needed to build and deploy your RAG-based copilot. </li>
 </ul>
 </li>
-<li><strong>Click</strong> <code>rg-AITOUR</code> to visit the Resource Group page.<ul>
-<li><strong>Check:</strong> Deployments (under "Essentials") - You should see: <strong>35 succeeded</strong>. </li>
-<li><strong>Check:</strong> Resources (in Overview) - You should see: <strong>15 resources</strong>.</li>
+<li><strong>Click</strong> <code>rg-AITOUR</code> to visit the Resource Group overview page.<ul>
+<li><strong>Check:</strong> Deployments (under "Essentials") - You should see: <em>35 succeeded</em>. </li>
+<li><strong>Check:</strong> Resources (in Overview) - You should see: <em>15 resources</em>.</li>
 </ul>
 </li>
 </ol>
@@ -1824,7 +1824,7 @@
 <li>Visit the <code>rg-AITOUR</code> Resource group page</li>
 <li>Click the <code>Container App</code> resource to display the Overview page</li>
 <li>Look for <code>Application Url</code> (at top right), and click it to launch in new tab </li>
-<li>You should see: A "Hello World" message on the screen (confirming app was deployed)</li>
+<li>You should see: A <code>Hello World</code> message on the screen (confirming app was deployed)</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Azure Container Apps (ACA) is used to host our chat AI application. The application server is implemented using FastAPI and exposes a <code>/create_request</code> API endpoint to make requests to our copilot.</p>
@@ -1832,7 +1832,7 @@
 <h2 id="34-check-azure-cosmos-db">3.4. Check Azure Cosmos DB<a class="headerlink" href="#34-check-azure-cosmos-db" title="Permanent link">&para;</a></h2>
 <p>The Azure CosmosDB resource holds the customer data for our application. It is a noSQL database that contains JSON data for each customer, and the prior purchases they made.</p>
 <ol>
-<li>Switch to the <strong>Azure Portal</strong> (Tab 3️⃣) and display the <code>rg-AITOUR</code> resource group Overview</li>
+<li>Switch to the <strong>Azure Portal</strong> tab and display the <code>rg-AITOUR</code> resource group Overview</li>
 <li><strong>Click</strong> the <code>Azure Cosmos DB account</code> resource name to visit its details page</li>
 <li><strong>Click</strong> <code>Data Explorer</code> in the top-nav menu <ul>
 <li>dismiss the popup dialog to skip the movie</li>
@@ -1845,7 +1845,7 @@
 <h2 id="35-check-azure-ai-search">3.5. Check Azure AI Search<a class="headerlink" href="#35-check-azure-ai-search" title="Permanent link">&para;</a></h2>
 <p>The Azure AI Search resources contains the product index for our retailer's product catalog. It is the information <strong>retrieval</strong> service for <strong>R</strong>AG solutions, using sentence similarity and semantic ranking to return the most relevant results for a given customer query.</p>
 <ol>
-<li>Switch to the Azure Portal (Tab 3️⃣) and display the  <code>rg-AITOUR</code> resource group Overview</li>
+<li>Switch to the Azure Portal tab and display the  <code>rg-AITOUR</code> resource group Overview</li>
 <li>Click the <code>Search service</code> resource name to visit its details page</li>
 <li>Click <code>Search Explorer</code> in the top-nav menu  <ul>
 <li>see Search explorer with default index <code>contoso-products</code></li>
@@ -1854,8 +1854,11 @@
 </ul>
 </li>
 <li>Enter <code>sleeping bag</code> in the text box, and click Search<ul>
-<li>Verify that the first result returned relates to a sleeping bag from the catalog</li>
+<li>Verify that the first result returned relates to a sleeping bag from the catalog       </li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Look under the 'answers' section of the response to see if the results match.</p>
+</div>
 </li>
 <li>Enter <code>something to make food with</code> in the text box, and click Search       <ul>
 <li>Verify that the first result returned relates to a camping stove</li>
@@ -1879,7 +1882,7 @@
 </div>
 <p>The FastAPI server exposes a <code>Swagger API</code> endpoint that we can use for manual testing in both local (Codespaces) and cloud (Container Apps). Let's try it out now!</p>
 <ol>
-<li>Return to your deployed Azure Container App in Tab 5️⃣ </li>
+<li>Return to your deployed Azure Container App tab</li>
 <li>Add a <code>/docs</code> suffix to the URL and browse to that path - you will see: <strong>FastAPI</strong> page</li>
 <li>Expand the <code>POST</code> section by clicking the arrow<ul>
 <li>click <code>Try it out</code> to make inputs editable</li>

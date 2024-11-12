@@ -1762,19 +1762,22 @@
 <li>
 <p><strong>Observe:</strong> Recall that coherence is about how well the sentences fit together. </p>
 <ul>
-<li>Given the sample input, do you agree with the assessment?   </li>
+<li>Read the question (input)</li>
+<li>Read the answer (output)</li>
+<li>Review the context (support knowledge)</li>
+<li>Based on this review, <strong>do you agree with the Coherence assessment?</strong>   </li>
 </ul>
 </li>
 <li>
 <p><strong>Change Answer</strong></p>
 <ul>
-<li>replace sample answer with: <code>Lorem ipsum orci dictumst aliquam diam</code> </li>
-<li>run the prompty again. <em>How did the score change?</em></li>
-<li>undo the change. Return the prompty to original state for the next step.</li>
+<li>Replace sample answer with: <code>Lorem ipsum orci dictumst aliquam diam</code> </li>
+<li>Run the prompty again. <em>How did the score change?</em></li>
+<li>Undo the change. Return the prompty to original state for the next step.</li>
 </ul>
 </li>
 </ol>
-<p>Repeat this exercise for the other evaluators on your own. Use this to build your intuition for each metric and how it defines and assesses response quality.</p>
+<p>Repeat this exercise for the other evaluators on your own (e.g., Run the <code>Groundedness.Prompty</code> and see if the responses reflect knowledge provided in the support context). Use this to build your intuition for each metric and how it defines and assesses response quality.</p>
 <div class="admonition info">
 <p class="admonition-title">Note the several examples given in the Prompty file of answers that represent each of the star ratings. This is an example of <a href="https://learn.microsoft.com/azure/ai-services/openai/concepts/advanced-prompt-engineering?pivots=programming-language-chat-completions#few-shot-learning">few-shot learning</a>, a common technique used to guide AI models.</p>
 </div>
